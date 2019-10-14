@@ -8,7 +8,7 @@
         {
             var tests = new GraphTests();
 
-            tests.Contains();
+            tests.ContainsTriple();
             tests.Equals();
             tests.GetTriplesWithObject();
             tests.GetTriplesWithPredicate();
