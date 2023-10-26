@@ -14,14 +14,14 @@
             : base(original)
         {
             this.uri = uri;
-            this.Fragment = this.CreateUriNode(this.uri);
+            this.Fragment = new GraphWrapperNode(this.CreateUriNode(this.uri), this);
         }
 
         internal IriTemplate Search
         {
             get
             {
-                return this.GetTriplesWithPredicate(Vocabulary.Hydra.Search).Select(t => new IriTemplate(t.Object)).SingleOrDefault();
+                return this.GetTriplesWithPredicate(Vocabulary.Hydra.Search).Select(t => new IriTemplate(t.Object, this)).SingleOrDefault();
             }
         }
 
@@ -41,6 +41,6 @@
             }
         }
 
-        private IUriNode Fragment { get; set; }
+        private GraphWrapperNode Fragment { get; set; }
     }
 }

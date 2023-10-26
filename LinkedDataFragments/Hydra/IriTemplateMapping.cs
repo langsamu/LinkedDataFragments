@@ -5,11 +5,11 @@
     using VDS.RDF;
     using VDS.RDF.Nodes;
 
-    internal class IriTemplateMapping : WrapperNode
+    internal class IriTemplateMapping : GraphWrapperNode
     {
         [DebuggerStepThrough]
-        internal IriTemplateMapping(INode node)
-            : base(node)
+        internal IriTemplateMapping(INode node, IGraph graph)
+            : base(node, graph)
         {
         }
 

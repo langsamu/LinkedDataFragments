@@ -114,5 +114,22 @@
         {
             throw new NotSupportedException("This triple collection is read-only.");
         }
+
+        public override bool ContainsQuoted(Triple t)
+        {
+            throw new NotSupportedException("This triple collection does not support quoting.");
+        }
+
+        public override int QuotedCount => throw new NotSupportedException("This triple collection does not support quoting.");
+
+        public override IEnumerable<INode> QuotedObjectNodes => throw new NotSupportedException("This triple collection does not support quoting.");
+
+        public override IEnumerable<INode> QuotedPredicateNodes => throw new NotSupportedException("This triple collection does not support quoting.");
+
+        public override IEnumerable<INode> QuotedSubjectNodes => throw new NotSupportedException("This triple collection does not support quoting.");
+
+        public override IEnumerable<Triple> Asserted => throw new NotSupportedException("This triple collection does not support quoting.");
+
+        public override IEnumerable<Triple> Quoted => throw new NotSupportedException("This triple collection does not support quoting.");
     }
 }

@@ -6,7 +6,7 @@
 
     internal static class Extensions
     {
-        internal static IEnumerable<INode> ObjectsOf(this INode predicate, INode subject)
+        internal static IEnumerable<INode> ObjectsOf(this INode predicate, GraphWrapperNode subject)
         {
             return
                 from t in subject.Graph.GetTriplesWithSubjectPredicate(subject, predicate)

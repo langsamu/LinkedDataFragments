@@ -10,7 +10,7 @@
         private readonly Uri uri;
 
         internal TripleStore(Uri uri)
-            : base()
+            : base(new VDS.RDF.TripleStore())
         {
             this.uri = uri;
             this.LoadFromUri(uri);
@@ -21,7 +21,7 @@
             get
             {
                 return (
-                    from g in this.Graphs.Where(g => g.BaseUri is object)
+                    from g in this.Graphs.Where(g => g.Name is object)
                     select new Metadata(g, this.uri))
                     .Single();
             }
@@ -31,12 +31,12 @@
         {
             get
             {
-                if (!this.HasGraph(null))
+                if (!this.HasGraph((IRefNode)null))
                 {
                     return System.Linq.Enumerable.Empty<Triple>();
                 }
 
-                return this.Graphs[null].Triples;
+                return this.Graphs[(IRefNode)null].Triples;
             }
         }
     }

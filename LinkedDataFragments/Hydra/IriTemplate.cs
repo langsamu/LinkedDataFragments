@@ -6,11 +6,11 @@
     using VDS.RDF;
     using VDS.RDF.Nodes;
 
-    public class IriTemplate : WrapperNode
+    public class IriTemplate : GraphWrapperNode
     {
         [DebuggerStepThrough]
-        internal IriTemplate(INode node)
-            : base(node)
+        internal IriTemplate(INode node, IGraph graph)
+            : base(node, graph)
         {
         }
 
@@ -52,7 +52,7 @@
             {
                 return
                     from n in Vocabulary.Hydra.Mapping.ObjectsOf(this)
-                    select new IriTemplateMapping(n);
+                    select new IriTemplateMapping(n, this.Graph);
             }
         }
 
