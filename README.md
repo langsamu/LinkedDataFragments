@@ -1,1 +1,3 @@
-See the dotNetRDF issue [Linked Data Fragments](https://github.com/dotnetrdf/dotnetrdf/issues/200#issuecomment-541869636).
+Proof of concept implementation of Linked Data Fragments in dotNetRDF.
+
+Graduated to dotnetrdf/dotnetrdf#608.
